@@ -1,0 +1,29 @@
+---
+title: "Exploratory Data Analysis - COVID-19"
+excerpt: "Visualization of COVID19 data using plotly python package"
+author_profile: true
+categories:
+  - EDA
+tags:
+  - COVID19
+  - EDA
+  - Visualization
+  - plotly
+classes: wide
+---
+## The Beginning...
+COVID-19 popularly known as the coronavirus was first identified in Wuhan, China in December 2019. The disease being infectious in nature has spread rapidly to other countries around the globe to the extent that WHO declared it a **pandemic** on March 11.
+
+Since inception, the infamous virus has caused major disruptions in almost every aspect of life and continues to affect millions all around the world.
+
+## Countries Impacted Over Time
+The inflection point on the graph seems to be around February 23 where the curve takes a dramatic turn in direction.
+
+*Note: Click on "Play" to see the animation.*
+<iframe width="800" height="450" frameborder="0" scrolling="no" src="//plotly.com/~jatins/1.embed"></iframe>
+
+
+
+<p> Race chart of the trend - </p>
+
+<div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/1873703" data-url="https://flo.uri.sh/visualisation/1873703/embed"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
