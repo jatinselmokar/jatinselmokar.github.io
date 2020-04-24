@@ -17,7 +17,7 @@ COVID-19 popularly known as the coronavirus was first identified in Wuhan, China
 Since inception, the infamous virus has caused major disruptions in almost every aspect of life and continues to affect millions all around the world.
 
 ## Countries Impacted Over Time
-The inflection point on the graph seems to be around February 23 where the curve takes a dramatic turn in direction.
+Although the rate of impact seemed constant in early February, the curve had reached on an unquestionable inflection point towards the end of the month.
 
 *Note: Click on "Play" to see the animation.*
 <iframe width="800" height="450" frameborder="0" scrolling="no" src="//plotly.com/~jatins/1.embed"></iframe>
