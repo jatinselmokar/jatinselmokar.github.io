@@ -22,7 +22,7 @@ Although the rate of impact seemed constant in early February, the curve had rea
 
 
 {% capture fig_img %}
-![Foo]({{ '/assets/images/eda/WorldTrend.jpg' | relative_url }})
+![Foo]({{ '/assets/images/WorldTrend.jpg' | relative_url }})
 {% endcapture %}
 
 <figure>
@@ -32,7 +32,7 @@ Although the rate of impact seemed constant in early February, the curve had rea
 
 
 {% capture fig_img %}
-![Foo]({{ '/assets/images/eda/calmap_confirmed.jpg' | relative_url }})
+![Foo]({{ '/assets/images/calmap_confirmed.jpg' | relative_url }})
 {% endcapture %}
 
 <figure>
@@ -43,7 +43,7 @@ Although the rate of impact seemed constant in early February, the curve had rea
 
 
 {% capture fig_img %}
-![Foo]({{ '/assets/images/eda/calmap_deaths.jpg' | relative_url }})
+![Foo]({{ '/assets/images/calmap_deaths.jpg' | relative_url }})
 {% endcapture %}
 
 <figure>
@@ -55,7 +55,7 @@ Although the rate of impact seemed constant in early February, the curve had rea
 
 
 {% capture fig_img %}
-![Foo]({{ '/assets/images/eda/Top5USstates.jpg' | relative_url }})
+![Foo]({{ '/assets/images/Top5USstates.jpg' | relative_url }})
 {% endcapture %}
 
 <figure>
