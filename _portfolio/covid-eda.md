@@ -12,12 +12,12 @@ tags:
 classes: wide
 ---
 ## The Beginning...
-COVID-19 popularly known as the coronavirus was first identified in Wuhan, China in December 2019. The disease being infectious in nature has spread rapidly to other countries around the globe to the extent that WHO declared it a **pandemic** on March 11.
+COVID-19 popularly known as the coronavirus was first identified in Wuhan, China in December 2019. It swiftly spread to other countries to the extent that the World Health Organization (WHO) declared it a **pandemic** on March 11.
 
 Since inception, the infamous virus has caused major disruptions in almost every aspect of life and continues to affect millions all around the world.
 
 ## Countries Impacted Over Time
-Although the rate of impact seemed constant in early February, the curve had reached on an unquestionable inflection point towards the end of the month.
+Although the rate of impact seemed constant in early February, the curve had reached an unquestionable inflection point towards the end of the month.
 
 *Note: Click on "Play" to see the animation.*
 <iframe width="800" height="450" frameborder="0" scrolling="no" src="//plotly.com/~jatins/1.embed"></iframe>
