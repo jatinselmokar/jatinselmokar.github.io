@@ -22,10 +22,10 @@ Although the rate of impact seemed constant in early February, the curve had rea
 
 
 {% capture fig_img %}
-![Foo]({{ '/assets/images/WorldTrend.png' | relative_url }}){: .align-center}
+![Foo]({{ '/assets/images/WorldTrend.png' | relative_url }}){: .align-left}
 {% endcapture %}
 
-<figure>
+<figure style="width: 800px; height: 700px">
   {{ fig_img | markdownify | remove: "<p>" | remove: "</p>" }}
   <figcaption>World Trend</figcaption>
 </figure>
@@ -35,7 +35,7 @@ Although the rate of impact seemed constant in early February, the curve had rea
 ![Foo]({{ '/assets/images/calmap_confirmed.png' | relative_url }})
 {% endcapture %}
 
-<figure style="width: 150px; height: 400px " class="align-left">
+<figure style="width: 800px; height: 700px" class="align-center">
   {{ fig_img | markdownify | remove: "<p>" | remove: "</p>" }}
   <figcaption>Calmap for confirmed</figcaption>
 </figure>
