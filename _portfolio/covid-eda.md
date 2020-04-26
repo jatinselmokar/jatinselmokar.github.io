@@ -11,9 +11,6 @@ tags:
   - plotly
 classes: wide
 ---
-<div w3-include-html="worldtrend.html">World Trend</div>
-
-
 ## The Beginning...
 COVID-19, a novel form of coronavirus family, was first identified in Wuhan, China in December 2019.  It swiftly spread to other countries to the extent that the World Health Organization (WHO) declared it a **pandemic** on March 11. Since inception, the infamous virus has caused major disruptions in almost every aspect of life and continues to affect millions all around the world.
 
