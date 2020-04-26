@@ -11,7 +11,7 @@ tags:
   - plotly
 classes: wide
 ---
-{% include "usheatmap.html" %}
+{% include usheatmap.html %}
 
 ## The Beginning...
 COVID-19, a novel form of coronavirus family, was first identified in Wuhan, China in December 2019.  It swiftly spread to other countries to the extent that the World Health Organization (WHO) declared it a **pandemic** on March 11.
