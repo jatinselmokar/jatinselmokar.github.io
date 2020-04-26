@@ -11,7 +11,7 @@ tags:
   - plotly
 classes: wide
 ---
-![URl]({{ site.url }}{{ site.baseurl }}/worldtrend.html)
+![URl]({{ site.url }}{{ site.baseurl }}/assets/worldtrend.html)
 
 [full documentation](worldtrend.html)
 
