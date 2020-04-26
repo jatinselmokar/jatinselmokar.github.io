@@ -11,36 +11,6 @@ tags:
   - plotly
 classes: wide
 ---
-
-<script src="jquery.js"></script>
-<script>
-$(function(){
-  $("#includedContent").load("/aseets/worldtrend.html");
-});
-</script>
-
-<script src="jquery.js"></script>
-<script>
-$(function(){
-  $("#includedContent").load("usheatmap.html");
-});
-</script>
-
-<html>
-  <head>
-    <script src="jquery.js"></script>
-    <script>
-    $(function(){
-      $("#includedContent").load("usheatmap.html");
-    });
-    </script>
-  </head>
-
-  <body>
-     <div id="includedContent"></div>
-  </body>
-</html>
-
 ## The Beginning...
 COVID-19, a novel form of coronavirus family, was first identified in Wuhan, China in December 2019.  It swiftly spread to other countries to the extent that the World Health Organization (WHO) declared it a **pandemic** on March 11.
 
