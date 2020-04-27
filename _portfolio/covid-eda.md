@@ -1,9 +1,10 @@
 ---
 title: "Exploratory Data Analysis - COVID-19"
 excerpt: "Visualization of COVID19 Data Using Plotly Python Package"
+tagline: "Exploratory Data Analysis - COVID-19"
 header:
-  image: /assets/images/COVIDHeader.jpg
-  teaser: assets/images/COVIDHeader.jpg
+  overlay_image: /assets/images/COVIDHeader.jpg
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 author_profile: true
 categories:
   - EDA
@@ -30,6 +31,9 @@ Although the rate of impact seemed constant in early February, the curve had rea
 
 ## World Trend Over Time
 {% include worldtrend.html %}
+
+## World Confirmed Cases - Time Lapse
+{% include worldconfirmedtimelapse.html %}
 
 ## US Confirmed Cases Heat Map
 {% include usheatmap.html %}
