@@ -22,7 +22,7 @@ Since inception, the infamous virus has caused major disruptions in almost every
 ## Countries Impacted Over Time
 Although the rate of impact seemed constant in early February, the curve had reached an unquestionable inflection point towards the end of the month.
 
-```Python
+```python
 #Number for Countries affected over time
 
 dfpivot = df.pivot_table(index = 'Country/Region', columns = 'Date', values = ['Confirmed'])
