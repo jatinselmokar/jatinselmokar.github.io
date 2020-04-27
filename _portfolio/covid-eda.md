@@ -32,7 +32,7 @@ Although the rate of impact seemed constant in early February, the curve had rea
 {% include worldtrend.html %}
 
 ## US Confirmed Cases Heat Map
-{% include USheatmap.html %}
+{% include usheatmap.html %}
 
 ## Top 10 States in the US
 {% include top10states.html %}
