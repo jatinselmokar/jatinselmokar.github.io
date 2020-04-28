@@ -45,9 +45,7 @@ The interactive world map is built using the plotly's choropleth feature to visu
 
 ### Top 10 States in the US
 
-{% include top10states_darkmode.html %}
-
-
+{% include top10states_darkmode.html %}  
 
 For more visualizations and the python code, please visit *[GitHub]('https://github.com/jatinselmokar/COVID-19-Exploratory-Data-Analysis-Using-PyPlot')*
 
