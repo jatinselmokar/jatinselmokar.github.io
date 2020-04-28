@@ -14,12 +14,12 @@ tags:
   - plotly
 classes: wide
 ---
-## The Beginning...
+### The Beginning...
 COVID-19, a novel form of coronavirus family, was first identified in Wuhan, China in December 2019. From then on, it swiftly spread to other countries to the extent that the World Health Organization (WHO) declared it a **pandemic** on March 11.
 
 Since inception, the infamous virus has caused major disruptions in almost every aspect of life and continues to affect millions all around the world.
 
-## Countries Impacted Over Time
+### Countries Impacted Over Time
 Although the rate of impact seemed constant in early February, the curve had reached an unquestionable inflection point towards the end of the month.
 
 *Note: Click on "Play" to see the animation.*
@@ -27,23 +27,23 @@ Although the rate of impact seemed constant in early February, the curve had rea
 
 ### World Map - Confirmed Cases
 
-The interactive world map is built using the plotly's choropleth feature to visualize the confirmed case count of different countries. To adjust to the non-uniform range of values, the confirmed case count has been converted to log scale.
+The interactive world map is built using the plotly's choropleth feature to visualize the confirmed case count of different countries. To adjust to the non-uniform range of values, the confirmed numbers have been converted to a log scale.
 
 {% include confirmedcasesworldmap.html %}
 
-## World Trend Over Time
+### World Trend Over Time
 
 {% include worldtrend.html %}
 
-## World Confirmed Cases - Time Lapse
+### World Confirmed Cases - Time Lapse
 
 {% include worldconfirmedtimelapse.html %}
 
-## US Confirmed Cases Heat Map
+### US Confirmed Cases Heat Map
 
 {% include usheatmap.html %}
 
-## Top 10 States in the US
+### Top 10 States in the US
 
 {% include top10states_darkmode.html %}
 
