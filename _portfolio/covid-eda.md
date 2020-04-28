@@ -25,9 +25,9 @@ Although the rate of impact seemed constant in early February, the curve had rea
 *Note: Click on "Play" to see the animation.*
 <iframe width="800" height="450" frameborder="0" scrolling="no" src="//plotly.com/~jatins/1.embed"></iframe>
 
-## World Map - Confirmed Cases
+### World Map - Confirmed Cases
 
-Interactive world map built using the plotly's choropleth feature!
+The interactive world map is built using the plotly's choropleth feature to visualize the confirmed case count all around the world . To adjust to the non-uniform range of values, the confirmed case count has been converted to log scale.
 
 {% include confirmedcasesworldmap.html %}
 
@@ -48,7 +48,7 @@ Interactive world map built using the plotly's choropleth feature!
 {% include top10states_darkmode.html %}
 
 
-For more visualizations and the python code, please visit [* GitHub *]('https://github.com/jatinselmokar/COVID-19-Exploratory-Data-Analysis-Using-PyPlot')
+For more visualizations and the python code, please visit *[GitHub]('https://github.com/jatinselmokar/COVID-19-Exploratory-Data-Analysis-Using-PyPlot')*
 
 
 <!--
