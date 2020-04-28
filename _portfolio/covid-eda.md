@@ -12,7 +12,7 @@ tags:
   - EDA
   - Visualization
   - plotly
-classes: wide
+
 ---
 {% include toc %}
 
