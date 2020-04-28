@@ -37,9 +37,13 @@ The interactive world map is built using the plotly's choropleth feature to visu
 
 ## World Confirmed Cases - Time Lapse
 
+Time lapse showing the traversal of the virus over time.
+
 {% include worldconfirmedtimelapse.html %}
 
 ## US Confirmed Cases Heat Map
+
+Here's a county level heat map showing the range of confirmed cases across US. Click on the color legend to filter out counties.
 
 {% include usheatmap.html %}
 
@@ -49,7 +53,7 @@ The interactive world map is built using the plotly's choropleth feature to visu
 
 <p>&nbsp;</p>
 
-For more visualizations and the python code, please visit * ![GitHub]('https://github.com/jatinselmokar/COVID-19-Exploratory-Data-Analysis-Using-PyPlot') *
+For more visualizations and the python code, please visit *[GitHub]('https://github.com/jatinselmokar/COVID-19-Exploratory-Data-Analysis-Using-PyPlot')*
 
 
 <!--
