@@ -27,7 +27,7 @@ Although the rate of impact seemed constant in early February, the curve had rea
 
 ### World Map - Confirmed Cases
 
-The interactive world map is built using the plotly's choropleth feature to visualize the confirmed case count all around the world . To adjust to the non-uniform range of values, the confirmed case count has been converted to log scale.
+The interactive world map is built using the plotly's choropleth feature to visualize the confirmed case count of different countries. To adjust to the non-uniform range of values, the confirmed case count has been converted to log scale.
 
 {% include confirmedcasesworldmap.html %}
 
