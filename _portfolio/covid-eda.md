@@ -59,7 +59,7 @@ Here's a county level heat map showing the range of confirmed cases across US. C
 ## Top 10 States in the US
 New York, New Jersey, and Massachusetts are the top states that are highly affected by the pandemic with New York being considered as the epicenter of the American coronavirus outbreak.
 
-{% include top10states_darkmode.html %}
+{% include top10states.html %}
 
 <p>&nbsp;</p>
 
