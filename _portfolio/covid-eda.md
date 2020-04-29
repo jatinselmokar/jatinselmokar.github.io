@@ -37,6 +37,12 @@ The interactive world map is built using the plotly's choropleth feature to visu
 
 {% include worldtrend.html %}
 
+## Cases Per Day - Top 3 Countries
+
+{% include casesperday_darkmode.html %}
+
+{% include casesperday.html %}
+
 ## World Confirmed Cases - Time Lapse
 
 Time lapse showing the traversal of the virus over time.
@@ -55,7 +61,7 @@ Here's a county level heat map showing the range of confirmed cases across US. C
 
 <p>&nbsp;</p>
 
-For more visualizations and the python code, please visit *[GitHub](https://github.com/jatinselmokar/COVID-19-Exploratory-Data-Analysis-Using-PyPlot)*
+For more visualizations and the python code, please visit *[GitHub](https://github.com/jatinselmokar/COVID-19-Exploratory-Data-Analysis-Using-PyPlot)* link.
 
 
 <!--
