@@ -38,8 +38,6 @@ The interactive world map is built using the plotly's choropleth feature to visu
 
 ## Cases Per Day - Top 3 Countries
 
-{% include casesperday_darkmode.html %}
-
 {% include casesperday.html %}
 
 ## World Confirmed Cases - Time Lapse
