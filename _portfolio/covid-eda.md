@@ -18,13 +18,13 @@ classes: wide
 ## The Beginning...
 COVID-19, a novel form of coronavirus family, was first identified in Wuhan, China in December 2019. From then on, it swiftly spread to other countries to the extent that the World Health Organization (WHO) declared it a **pandemic** on March 11.
 
-Since inception, the infamous virus has caused major disruptions in almost every aspect of life and continues to affect millions all around the world.
+Since inception, the infamous virus has caused major disruptions in almost every aspect of life and continues to affect millions all around the world. While state of normalcy seems distant, it is clearly evident that practicing social distancing, quarantine, and isolation are flattening the curve and contaminating the virus.   
 
 ## Countries Impacted Over Time
 Although the rate of impact seemed constant in early February, the curve had reached an unquestionable inflection point towards the end of the month.
 
 *Note: Click on "Play" to see the animation.*
-{% include countriesaffected.html %}{: .align-center}
+{% include countriesaffected.html %}{: style="text-align: center;"}
 
 ## World Map - Confirmed Cases
 
@@ -34,9 +34,13 @@ The interactive world map is built using the plotly's choropleth feature to visu
 
 ## World Trend Over Time
 
+A line chart showing the trend of confirmed, recovered, and death figures over time.  
+
 {% include worldtrend.html %}
 
 ## Cases Per Day - Top 3 Countries
+
+The declining rate of confirmed cases in the top 3 countries has definitely alleviated concerns and brings hope to investors in restoring the economy.
 
 {% include casesperday.html %}
 
@@ -53,6 +57,7 @@ Here's a county level heat map showing the range of confirmed cases across US. C
 {% include usheatmap.html %}
 
 ## Top 10 States in the US
+New York, New Jersey, and Massachusetts are the top states that are highly affected by the pandemic with New York being considered as the epicenter of the American coronavirus outbreak.
 
 {% include top10states_darkmode.html %}
 
