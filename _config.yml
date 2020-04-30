@@ -304,7 +304,7 @@ defaults:
       path: "_portfolio"
       type: posts
     values:
-      layout: single
+      layout: splash
       author_profile: true
       share: true
       related: true
