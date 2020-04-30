@@ -307,4 +307,4 @@ defaults:
       layout: single
       author_profile: true
       share: true
-      related: true
+      related: false
