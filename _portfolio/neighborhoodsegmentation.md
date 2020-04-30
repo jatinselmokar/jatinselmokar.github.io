@@ -176,10 +176,50 @@ plt.figure(figsize= (12,8))
 plt.plot(range(1, 10), cost, color ='g', linewidth ='2')
 plt.xlabel("Value of K")
 plt.ylabel("Sqaured Error (Cost)")
-plt.show() # clear the plot
+plt.show()
 
 ```
 
+### Fit Data for 5 clusters
+
+```Python
+clusters = 5
+sfrestaurant_grouped_clustering = sfrestaurant_grouped.drop('Neighborhood', 1)
+# run k-means clustering
+kmeans = KMeans(n_clusters=clusters, random_state=0).fit(sfrestaurant_grouped_clustering)
+# check cluster labels generated for each row in the dataframe
+neighborhoods_venues_sorted.insert(0, 'Cluster Labels', kmeans.labels_)
+sanfran_merged = restaurantdf
+# merge toronto_grouped with toronto_data to add latitude/longitude for each neighborhood
+sanfran_merged = sanfran_merged.join(neighborhoods_venues_sorted.set_index('Neighborhood'), on='Neighborhood')
+```
+### Visualizing Clusters
+
+```Python
+# create map
+map_clusters = folium.Map(location=[latitude, longitude], zoom_start=12)
+
+# set color scheme for the clusters
+x = np.arange(clusters)
+ys = [i + x + (i*x)**2 for i in range(clusters)]
+colors_array = cm.rainbow(np.linspace(0, 1, len(ys)))
+rainbow = [colors.rgb2hex(i) for i in colors_array]
+
+# add markers to the map
+markers_colors = []
+for lat, lon, poi, cluster in zip(sanfran_merged['NeighborhoodLatitude'], sanfran_merged['NeighborhoodLongitude'], sanfran_merged['Neighborhood'], sanfran_merged['Cluster Labels']):
+    label = folium.Popup(str(poi) + ' Cluster ' + str(cluster), parse_html=True)
+    folium.CircleMarker(
+        [lat, lon],
+        radius=5,
+        popup=label,
+        color=rainbow[cluster-1],
+        fill=True,
+        fill_color=rainbow[cluster-1],
+        fill_opacity=0.9).add_to(map_clusters)
+
+map_clusters
+```
 
 
 For detailed code, please visit [Github]() link.
