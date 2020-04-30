@@ -4,7 +4,7 @@ permalink: /projects/
 layout: collection
 classes: wide
 collection: portfolio
-entries_layout: list
+entries_layout: grid
 
 ---
 
