@@ -55,7 +55,7 @@ df.columns = ['Neighborhood']
 ```
 
 
-<img src="/assets/images/neighborhoodlist.jpg" alt="HTML PIC" style="width:500px;height:600px;">
+<img src="/assets/images/neighborhoodlist.jpg" alt="HTML PIC" style="width:500px;height:350px;">
 
 ### Geo-Coordinates
 
