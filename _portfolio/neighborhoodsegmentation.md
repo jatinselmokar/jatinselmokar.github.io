@@ -73,6 +73,14 @@ for x in range(len(df)):
 <img src="/assets/images/clustering/geocoordinates.png" alt="Geo-Coordinates" style="width:600px;height:300px;">
 <figcaption> Fig.1 - Trulli, Puglia, Italy.</figcaption>
 </figure>
+figure {
+  display: table;
+}
+figcaption {
+  display: table-caption;
+  caption-side: top;
+}
+
 ### Restaurant Venues
 
 FourSquare API was used in retrieval of San Francisco restaurants data and their respective locations.
