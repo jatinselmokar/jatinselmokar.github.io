@@ -69,11 +69,9 @@ for x in range(len(df)):
     df['lat'][x] = geocode_result[0]['geometry']['location'] ['lat']
     df['long'][x] = geocode_result[0]['geometry']['location']['lng']
 ```
-<img src="/assets/images/clustering/geocoordinates.png" <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
-alt="Geo-Coordinates" style="width:600px;height:300px;" figcaption = "top: 0;right: 0;
-width: 24px;
-height: 180px;
-line-height: 24px;
+<img src="/assets/images/clustering/geocoordinates.png" alt="Geo-Coordinates" style="width:600px;height:300px;">
+ <figcaption Fig.1 - Trulli, Puglia, Italy.
+figcaption = "top: 0;right: 0;width: 24px;height: 180px;line-height: 24px;
 font-size: 13px;
 font-weight: bold;
 text-align: center;
