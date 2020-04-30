@@ -71,7 +71,7 @@ for x in range(len(df)):
 ```
 <figure>
 <img src="/assets/images/clustering/geocoordinates.png" alt="Geo-Coordinates" style="width:600px;height:300px;">
-<figcaption Fig.1 - Trulli, Puglia, Italy. figcaption = "caption-side: top" </figcaption>
+<figcaption Fig.1 - Trulli, Puglia, Italy.</figcaption>
 </figure>
 ### Restaurant Venues
 
