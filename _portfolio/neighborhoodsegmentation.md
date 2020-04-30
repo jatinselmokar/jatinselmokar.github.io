@@ -53,8 +53,7 @@ neighborhoods = neighborhoods[:-4]
 df  = pd.DataFrame(data=[neighborhoods]).T
 df.columns = ['Neighborhood']
 ```
-
-
+Output:
 <img src="/assets/images/clustering/neighborhoodlist.jpg" alt="HTML PIC" style="width:400px;height:300px;">
 
 ### Geo-Coordinates
@@ -69,6 +68,7 @@ for x in range(len(df)):
     df['lat'][x] = geocode_result[0]['geometry']['location'] ['lat']
     df['long'][x] = geocode_result[0]['geometry']['location']['lng']
 ```
+Output:
 <img src="/assets/images/clustering/geocoordinates.png" alt="Geo-Coordinates" style="width:600px;height:300px;" >
 
 ### Restaurant Venues
@@ -121,7 +121,8 @@ sanfran_venues.columns = ['Neighborhood', 'NeighborhoodLatitude', 'NeighborhoodL
 sanfran_venues.head(3)
 
 ```
-<img src="/assets/images/clustering/venues.png" alt="HTML PIC" style="height:300px;">
+Output:
+<img src="/assets/images/clustering/venues.png" alt="HTML PIC"">
 
 ## Data Preprocessing & Exploration
 
@@ -161,7 +162,7 @@ for hood in sfrestaurant_grouped['Neighborhood']:
     print(temp.sort_values('freq', ascending=False).reset_index(drop=True).head(num_top_venues))
     print('\n')
 ```
-
+Output:
 <img src="/assets/images/clustering/top5.png" alt="Top 5 Categories" style="height:400px;">
 
 ### One-Hot Encoding Restaurant Categories
@@ -194,6 +195,7 @@ plt.ylabel("Sqaured Error (Cost)")
 plt.show()
 
 ```
+Output:
 <img src="/assets/images/clustering/elbowmethod.png" alt="Top 5 Categories" style="width:500px;height:400px;">
 
 ### Fit Data for 5 clusters
@@ -212,7 +214,7 @@ sanfran_merged = restaurantdf
 # merge toronto_grouped with toronto_data to add latitude/longitude for each neighborhood
 sanfran_merged = sanfran_merged.join(neighborhoods_venues_sorted.set_index('Neighborhood'), on='Neighborhood')
 ```
-
+Output:
 <img src="/assets/images/clustering/kmeansfit.png" alt="Kmeans Fit" >
 
 ### Visualizing Clusters
