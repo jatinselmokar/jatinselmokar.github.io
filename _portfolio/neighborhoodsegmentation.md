@@ -54,9 +54,9 @@ df  = pd.DataFrame(data=[neighborhoods]).T
 df.columns = ['Neighborhood']
 ```
 
-including figure  with sizing 
+including figure  with sizing
 
-{% include figure image_path="/assets/images/neighborhoodlist.jpg" width = "400" height = "200"  alt="this is a placeholder image" caption="This is a figure caption." %}
+{% include figure image_path="/assets/images/neighborhoodlist.jpg" width = "10" height = "10"  alt="this is a placeholder image" caption="This is a figure caption." %}
 ### Geo-Coordinates
 
 The geo-coordinates for each neighborhood are populated using the google maps API.
