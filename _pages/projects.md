@@ -3,7 +3,7 @@ title: 'Projects'
 permalink: /projects/
 layout: collection
 classes: wide
-collection: portfolio
+collection: posts
 entries_layout: grid
 
 ---
