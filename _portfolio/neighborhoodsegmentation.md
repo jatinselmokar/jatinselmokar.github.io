@@ -69,16 +69,10 @@ for x in range(len(df)):
     df['lat'][x] = geocode_result[0]['geometry']['location'] ['lat']
     df['long'][x] = geocode_result[0]['geometry']['location']['lng']
 ```
+<figure>
 <img src="/assets/images/clustering/geocoordinates.png" alt="Geo-Coordinates" style="width:600px;height:300px;">
- <figcaption Fig.1 - Trulli, Puglia, Italy.
-figcaption = "top: 0;right: 0;width: 24px;height: 180px;line-height: 24px;
-font-size: 13px;
-font-weight: bold;
-text-align: center;
-color: rgb(255, 255, 255);
-text-transform: uppercase;
-writing-mode: vertical-rl;">
-
+<figcaption Fig.1 - Trulli, Puglia, Italy. figcaption = "caption-side: top" </figcaption>
+</figure>
 ### Restaurant Venues
 
 FourSquare API was used in retrieval of San Francisco restaurants data and their respective locations.
