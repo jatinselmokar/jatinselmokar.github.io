@@ -60,7 +60,6 @@ The geo-coordinates for each neighborhood are populated using the google maps AP
 
 ``` python
 from googlemaps import Client as GoogleMaps
-from geopy.geocoders import Nominatim
 
 for x in range(len(df)):
     geocode_result = gmaps.geocode(df['Address'][x])
@@ -122,12 +121,14 @@ sanfran_venues = getNearbyVenues(  neighborhood=df['Neighborhood'],
 # #Explore
 placetoexplore = 'Restaurant'
 print('There are ',len(sanfran_venues['VenueCategory'].unique()),' venue categories around San Francisco')
+
 #How many restaturant categories
 uniquerestaurants = sanfran_venues[sanfran_venues['VenueCategory'].str.contains('{}'.format(placetoexplore))]['VenueCategory'].unique().tolist()
 print('There are', len(uniquerestaurants), ' unique restaurants in SF area')
-uniquerestaurants
+
 ##Explore Other Categories
 sanfran_venues['VenueCategory'].unique()
+
 ##Create a df for restaurants
 restaurantdf = sanfran_venues[sanfran_venues['VenueCategory'].str.contains('{}'.format(placetoexplore))]
 restaurantdf.head()
@@ -186,11 +187,14 @@ plt.show()
 ```python
 clusters = 5
 sfrestaurant_grouped_clustering = sfrestaurant_grouped.drop('Neighborhood', 1)
+
 # run k-means clustering
 kmeans = KMeans(n_clusters=clusters, random_state=0).fit(sfrestaurant_grouped_clustering)
+
 # check cluster labels generated for each row in the dataframe
 neighborhoods_venues_sorted.insert(0, 'Cluster Labels', kmeans.labels_)
 sanfran_merged = restaurantdf
+
 # merge toronto_grouped with toronto_data to add latitude/longitude for each neighborhood
 sanfran_merged = sanfran_merged.join(neighborhoods_venues_sorted.set_index('Neighborhood'), on='Neighborhood')
 ```
