@@ -1,10 +1,10 @@
 ---
 title: 'Projects'
 permalink: /projects/
-layout: posts
+layout: collection
 classes: wide
-collection: portfolio
-entries_layout: list
+collection: posts
+entries_layout: grid
 
 ---
 
