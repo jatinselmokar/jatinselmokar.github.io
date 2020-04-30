@@ -54,7 +54,7 @@ df  = pd.DataFrame(data=[neighborhoods]).T
 df.columns = ['Neighborhood']
 ```
 
-including figure  with sizing
+including figure  with sizing 2
 
 {% include figure image_path="/assets/images/neighborhoodlist.jpg" width = "10" height = "10"  alt="this is a placeholder image" caption="This is a figure caption." %}
 ### Geo-Coordinates
