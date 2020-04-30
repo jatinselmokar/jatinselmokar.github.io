@@ -67,6 +67,9 @@ df.columns = ['Neighborhood']
 {% raw %}<img src="{{ site.url }}{{ site.baseurl }}/assets/images/neighborhoodlist.jpg" alt="" class="full">{% endraw %}
 ```
 {% raw %}<img src="{{ site.url }}{{ site.baseurl }}/assets/images/neighborhoodlist.png" alt="" class="full">{% endraw %}
+
+{% raw %}<img src="{{ site.url }}{{ site.baseurl }}/assets/images/neighborhoodlist.png" alt="" class="full" width="500" height="600">{% endraw %}
+
 ### Geo-Coordinates
 
 The geo-coordinates for each neighborhood are populated using the google maps API.
