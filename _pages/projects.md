@@ -1,7 +1,7 @@
 ---
 title: 'Projects'
 permalink: /projects/
-layout: posts
+layout: collection
 classes: wide
 collection: portfolio
 entries_layout: grid
