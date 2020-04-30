@@ -55,7 +55,7 @@ df.columns = ['Neighborhood']
 ```
 
 {% capture fig_img %}
-![Foo]({{ '/assets/images/neighborhoodlist.jpg' | relative_url }})
+![Foo]({{ '/assets/images/neighborhoodlist.png' | relative_url }})
 {% endcapture %}
 
 <figure>
