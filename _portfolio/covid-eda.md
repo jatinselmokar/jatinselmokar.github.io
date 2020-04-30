@@ -52,12 +52,12 @@ Time lapse showing the traversal of the virus over time.
 
 ## US Confirmed Cases Heat Map
 
-Here's a county level heat map showing the range of confirmed cases across US. Click on the color legend to filter out counties.
+County level heat map showing the range of confirmed cases across US. Click on the color legend to filter out counties.
 
 {% include usheatmap.html %}
 
 ## Top 10 States in the US
-New York, New Jersey, and Massachusetts are the top states that are highly affected by the pandemic with New York being considered as the epicenter of the American coronavirus outbreak.
+New York, New Jersey, and Massachusetts are among the top states that are highly affected by the pandemic with New York being considered as the epicenter of the American coronavirus outbreak.
 
 {% include top10states.html %}
 
