@@ -53,6 +53,14 @@ neighborhoods = neighborhoods[:-4]
 df  = pd.DataFrame(data=[neighborhoods]).T
 df.columns = ['Neighborhood']
 ```
+{% capture fig_img %}
+![Foo]({{ '/assets/images/neighborhoodlist.jpg' | relative_url }})
+{% endcapture %}
+
+<figure>
+  {{ fig_img | markdownify | remove: "<p>" | remove: "</p>" }}
+  <figcaption>Output</figcaption>
+</figure>
 
 ### Geo-Coordinates
 
