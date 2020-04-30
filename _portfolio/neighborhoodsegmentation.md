@@ -172,14 +172,13 @@ for i in range(1,10):
     KM.fit(sfrestaurant_grouped_clustering)
     cost.append(KM.inertia_)   # calculates squared error for the clustered points
 
-# plot the cost against K values
 plt.figure(figsize= (12,8))
 plt.plot(range(1, 10), cost, color ='g', linewidth ='2')
 plt.xlabel("Value of K")
 plt.ylabel("Sqaured Error (Cost)")
 plt.show() # clear the plot
 
-```python
+```
 
 
 
