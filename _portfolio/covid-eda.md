@@ -23,7 +23,7 @@ Since inception, the infamous virus has caused major disruptions in almost every
 ## Countries Impacted Over Time
 Although the rate of impact seemed constant in early February, the curve had reached an unquestionable inflection point towards the end of the month.
 
-*Note: Click on "Play" to see the animation.*
+***Click on "Play" to see the animation.***
 {% include countriesaffected.html %}
 
 ## World Map - Confirmed Cases
