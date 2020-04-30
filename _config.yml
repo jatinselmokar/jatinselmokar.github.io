@@ -302,9 +302,9 @@ defaults:
   # _portfolio
   - scope:
       path: "_portfolio"
-      type: posts
+      type: portfolio
     values:
-      layout: splash
+      layout: single
       author_profile: true
       share: true
-      related: true
+      related: false
