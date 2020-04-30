@@ -69,7 +69,7 @@ for x in range(len(df)):
     df['lat'][x] = geocode_result[0]['geometry']['location'] ['lat']
     df['long'][x] = geocode_result[0]['geometry']['location']['lng']
 ```
-<img src="/assets/images/clustering/geocoordinates.png" alt="Geo-Coordinates" style="width:600px;height:300px;" caption: "nsjfn">
+<img src="/assets/images/clustering/geocoordinates.png" alt="Geo-Coordinates" style="width:600px;height:300px;" >
 
 ### Restaurant Venues
 
