@@ -182,7 +182,7 @@ plt.show()
 
 ### Fit Data for 5 clusters
 
-```Python
+```python
 clusters = 5
 sfrestaurant_grouped_clustering = sfrestaurant_grouped.drop('Neighborhood', 1)
 # run k-means clustering
@@ -195,7 +195,7 @@ sanfran_merged = sanfran_merged.join(neighborhoods_venues_sorted.set_index('Neig
 ```
 ### Visualizing Clusters
 
-```Python
+```python
 # create map
 map_clusters = folium.Map(location=[latitude, longitude], zoom_start=12)
 
