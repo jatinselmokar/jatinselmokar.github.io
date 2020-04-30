@@ -146,6 +146,10 @@ sanfran_venues['VenueCategory'].unique()
 restaurantdf = sanfran_venues[sanfran_venues['VenueCategory'].str.contains('{}'.format(placetoexplore))]
 restaurantdf.head()
 ```
+Output:
+
+<img src="/assets/images/clustering/uniquecategories.png" alt="Unique Categories">
+
 
 ### Top 5 Restaurants Categories In Each Neighborhood
 
@@ -178,6 +182,9 @@ sfrestaurant_onehot = pd.get_dummies(restaurantdf[['VenueCategory']], prefix="",
 # add neighborhood column back to dataframe
 sfrestaurant_onehot['Neighborhood'] = restaurantdf['Neighborhood']
 ```
+Output:
+
+<img src="/assets/images/clustering/onehot.png" alt="Encoding">
 
 ## K-Means clustering
 
