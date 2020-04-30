@@ -2,8 +2,8 @@
 title: "Unsupervised Learning Approach Towards Neighborhood Segmentation"
 excerpt: "Segmentation of San Francisco neighborhoods using K-Means clustering and FourSquare API"
 header:
-  teaser: /assets/images/SegmentationHeader.jpg
-  overlay_image: /assets/images/SegmentationHeader.jpg
+  teaser: /assets/images/clustering/SegmentationHeader.jpg
+  overlay_image: /assets/images/clustering/SegmentationHeader.jpg
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 author_profile: true
 categories:
@@ -55,7 +55,7 @@ df.columns = ['Neighborhood']
 ```
 
 
-<img src="/assets/images/neighborhoodlist.jpg" alt="HTML PIC" style="width:500px;height:350px;">
+<img src="/assets/images/clustering/neighborhoodlist.jpg" alt="HTML PIC" style="width:500px;height:350px;">
 
 ### Geo-Coordinates
 
@@ -114,6 +114,11 @@ sanfran_venues = getNearbyVenues(  neighborhood=df['Neighborhood'],
                                    latitudes=df['lat'],
                                    longitudes=df['long']
                                   )
+
+sanfran_venues.columns = ['Neighborhood', 'NeighborhoodLatitude', 'NeighborhoodLongitude',
+'VenueName', 'VenueLatitude', 'VenueLongitude', 'VenueCategory']
+sanfran_venues.head(3)
+
 
 ```
 
@@ -230,4 +235,4 @@ map_clusters
 ```
 
 
-For detailed code, please visit [Github]() link.
+For the entire code and detailed report, please visit [Github]() link.
