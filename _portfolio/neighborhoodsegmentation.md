@@ -58,6 +58,10 @@ df.columns = ['Neighborhood']
 ![Foo]({{ '/assets/images/neighborhoodlist.jpg' | relative_url }})
 {% endcapture %}
 
+<figure>
+  {{ fig_img | markdownify | remove: "<p>" | remove: "</p>" }}
+  <figcaption>Photo from Unsplash.</figcaption>
+</figure>
 
 ### Geo-Coordinates
 
