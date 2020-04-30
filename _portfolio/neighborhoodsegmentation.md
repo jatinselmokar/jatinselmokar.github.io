@@ -68,7 +68,6 @@ for x in range(len(df)):
 ```
 
 ### Restaurant Venues
-<script src="https://gist.github.com/jatinselmokar/e795ef99248378bc4c128103f7621364.js"></script>
 
 FourSquare API was used in retrieval of San Francisco restaurants data and their respective locations.
 
