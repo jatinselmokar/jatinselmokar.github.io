@@ -57,11 +57,16 @@ df.columns = ['Neighborhood']
 ![Foo]({{ '/assets/images/neighborhoodlist.jpg' | relative_url }})
 {% endcapture %}
 
-<figure>
-  {{ fig_img | markdownify | remove: "<p>" | remove: "</p>" }}
-  <figcaption>Output</figcaption>
-</figure>
 
+```html
+{% raw %}<img src="{{ site.url }}{{ site.baseurl }}/assets/images/neighborhoodlist.jpg" alt="">{% endraw %}
+```
+{% raw %}<img src="{{ site.url }}{{ site.baseurl }}/assets/images/neighborhoodlist.jpg" alt="">{% endraw %}
+
+```html
+{% raw %}<img src="{{ site.url }}{{ site.baseurl }}/assets/images/neighborhoodlist.jpg" alt="" class="full">{% endraw %}
+```
+{% raw %}<img src="{{ site.url }}{{ site.baseurl }}/assets/images/neighborhoodlist.jpg" alt="" class="full">{% endraw %}
 ### Geo-Coordinates
 
 The geo-coordinates for each neighborhood are populated using the google maps API.
