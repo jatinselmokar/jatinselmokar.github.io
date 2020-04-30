@@ -6,7 +6,7 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 author_profile: true
 categories:
-  - EDA
+  - Data Science
 tags:
   - COVID19
   - EDA
@@ -18,7 +18,7 @@ classes: wide
 ## The Beginning...
 COVID-19, a novel form of coronavirus family, was first identified in Wuhan, China in December 2019. From then on, it swiftly spread to other countries to the extent that the World Health Organization (WHO) declared it a **pandemic** on March 11.
 
-Since inception, the infamous virus has caused major disruptions in almost every aspect of life and continues to affect millions all around the world. While state of normalcy seems distant, it is clearly evident that practicing social distancing, quarantine, and isolation are flattening the curve and contaminating the virus.   
+Since inception, the infamous virus has caused major disruptions in almost every aspect of life and continues to affect millions all around the world. While state of normalcy seems distant, it is clearly evident that practicing social distancing, quarantine, and isolation are flattening the curve and aiding in contamination the virus.   
 
 ## Countries Impacted Over Time
 Although the rate of impact seemed constant in early February, the curve had reached an unquestionable inflection point towards the end of the month.
