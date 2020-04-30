@@ -2,6 +2,7 @@
 title: "Exploratory Data Analysis - COVID-19"
 excerpt: "Visualization of COVID19 Data Using Plotly Python Package"
 header:
+  teaser: /assets/images/COVIDHeader.jpg
   overlay_image: /assets/images/COVIDHeader.jpg
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 author_profile: true
