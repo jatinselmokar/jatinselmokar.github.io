@@ -25,7 +25,7 @@ Our main objective in this project is to guide the business client in choosing t
 
 ## Data Collection
 
-For the analysis, we will need the following data
+For the analysis, we will need the following data -
 
 1. San Francisco neighborhood data
 2. Geo-Coordinates for neighborhoods
@@ -36,81 +36,163 @@ For the analysis, we will need the following data
 
 The neighborhood data is extracted using python's BeautifulSoup package from the Wikipedia website.
 
-``` python
-url = 'https://en.wikipedia.org/wiki/List_of_neighborhoods_in_San_Francisco'
-results_url = requests.get(url).text
-soup = BeautifulSoup(results_url, 'lxml' )
-neighborhoods = []
+    ``` python
+    from bs4 import BeautifulSoup
 
-for text in soup.find_all('span', class_='mw-headline'):
-    neighborhoods.append(text.text)
+    url = 'https://en.wikipedia.org/wiki/List_of_neighborhoods_in_San_Francisco'
+    results_url = requests.get(url).text
+    soup = BeautifulSoup(results_url, 'lxml' )
+    neighborhoods = []
 
-neighborhoods = neighborhoods[:-4]
+    for text in soup.find_all('span', class_='mw-headline'):
+        neighborhoods.append(text.text)
 
-df  = pd.DataFrame(data=[neighborhoods]).T
-df.columns = ['Neighborhood']
-```
+    neighborhoods = neighborhoods[:-4]
+
+    df  = pd.DataFrame(data=[neighborhoods]).T
+    df.columns = ['Neighborhood']
+    ```
 
 ### Geo-Coordinates
 
 The geo-coordinates for each neighborhood are populated using the google maps API.
 
-``` python
-from googlemaps import Client as GoogleMaps
-from geopy.geocoders import Nominatim
+    ``` python
+    from googlemaps import Client as GoogleMaps
+    from geopy.geocoders import Nominatim
 
-for x in range(len(df)):
-    geocode_result = gmaps.geocode(df['Address'][x])
-    df['lat'][x] = geocode_result[0]['geometry']['location'] ['lat']
-    df['long'][x] = geocode_result[0]['geometry']['location']['lng']
-```
+    for x in range(len(df)):
+        geocode_result = gmaps.geocode(df['Address'][x])
+        df['lat'][x] = geocode_result[0]['geometry']['location'] ['lat']
+        df['long'][x] = geocode_result[0]['geometry']['location']['lng']
+    ```
 
 ### Restaurant Venues
 
 FourSquare API was used in retrieval of San Francisco restaurants data and their respective locations.
 
-``` python
-def getNearbyVenues(neighborhood, latitudes, longitudes, radius=radiustoexplore):
+    ``` python
+    def getNearbyVenues(neighborhood, latitudes, longitudes, radius=radiustoexplore):
 
-    venues_list=[]
-    for neighborhood, lat, lng in zip(neighborhood, latitudes, longitudes):
-        print(neighborhood)
+        venues_list=[]
+        for neighborhood, lat, lng in zip(neighborhood, latitudes, longitudes):
+            print(neighborhood)
 
-        # create the API request URL
-        url = 'https://api.foursquare.com/v2/venues/explore?&client_id={}&client_secret={}&v={}&ll={},{}&radius={}&limit={}'.format(
-            CLIENT_ID,
-            CLIENT_SECRET,
-            VERSION,
-            lat,
-            lng,
-            radius,
-            limit)
-
-        # make the GET request
-        results = requests.get(url).json()["response"]['groups'][0]['items']
-
-        # return only relevant information for each nearby venue
-        for v in results:
-
-            venues_list.append((
-                neighborhood,
+            # create the API request URL
+            url = 'https://api.foursquare.com/v2/venues/explore?&client_id={}&client_secret={}&v={}&ll={},{}&radius={}&limit={}'.format(
+                CLIENT_ID,
+                CLIENT_SECRET,
+                VERSION,
                 lat,
                 lng,
-                v['venue']['name'], 
-                v['venue']['location']['lat'],
-                v['venue']['location']['lng'],  
-                v['venue']['categories'][0]['name']))
+                radius,
+                limit)
 
-    nearby_venues = pd.DataFrame(venues_list)
+            # make the GET request
+            results = requests.get(url).json()["response"]['groups'][0]['items']
 
-    return(nearby_venues)
+            # return only relevant information for each nearby venue
+            for v in results:
 
-sanfran_venues = getNearbyVenues(  neighborhood=df['Neighborhood'],
-                                   latitudes=df['lat'],
-                                   longitudes=df['long']
-                                  )
+                venues_list.append((
+                    neighborhood,
+                    lat,
+                    lng,
+                    v['venue']['name'],
+                    v['venue']['location']['lat'],
+                    v['venue']['location']['lng'],  
+                    v['venue']['categories'][0]['name']))
 
-```
+        nearby_venues = pd.DataFrame(venues_list)
+
+        return(nearby_venues)
+
+    sanfran_venues = getNearbyVenues(  neighborhood=df['Neighborhood'],
+                                       latitudes=df['lat'],
+                                       longitudes=df['long']
+                                      )
+
+    ```
+
+## Data Preprocessing & Exploration
+
+### Exploring Different Restaurant Categories
+    ```python
+    # #Explore
+
+    placetoexplore = 'Restaurant'
+
+    print('There are ',len(sanfran_venues['VenueCategory'].unique()),' venue categories around San Francisco')
+
+    #How many restaturant categories
+
+    uniquerestaurants = sanfran_venues[sanfran_venues['VenueCategory'].str.contains('{}'.format(placetoexplore))]['VenueCategory'].unique().tolist()
+
+    print('There are', len(uniquerestaurants), ' unique restaurants in SF area')
+    uniquerestaurants
+
+    ##Explore Other Categories
+
+    sanfran_venues['VenueCategory'].unique()
+
+    ##Create a df for restaurants
+
+    restaurantdf = sanfran_venues[sanfran_venues['VenueCategory'].str.contains('{}'.format(placetoexplore))]
+    restaurantdf.head()
+
+    ```
+### Top 5 Restaurants Categories In Each Neighborhood
+
+    ```python
+
+    sfrestaurant_grouped = sfrestaurant_onehot.groupby('Neighborhood').mean().reset_index()
+
+    num_top_venues = 5
+
+    for hood in sfrestaurant_grouped['Neighborhood']:
+        print("----"+hood+"----")
+        temp = sfrestaurant_grouped[sfrestaurant_grouped['Neighborhood'] == hood].T.reset_index()
+        temp.columns = ['venue','freq']
+        temp = temp.iloc[1:]
+        temp['freq'] = temp['freq'].astype(float)
+        temp = temp.round({'freq': 2})
+        print(temp.sort_values('freq', ascending=False).reset_index(drop=True).head(num_top_venues))
+        print('\n')
+    ```
+### One-Hot Encoding Restaurant Categories
+
+    ```python
+    #Encode VenueCategory column
+    sfrestaurant_onehot = pd.get_dummies(restaurantdf[['VenueCategory']], prefix="", prefix_sep="")
+
+    # add neighborhood column back to dataframe
+    sfrestaurant_onehot['Neighborhood'] = restaurantdf['Neighborhood']
+    ```
+
+## K-Means clustering
+
+### Selection Of K Using Elbow Point Method
+
+```python
+sfrestaurant_grouped_clustering = sfrestaurant_grouped.drop('Neighborhood', 1)
+
+cost =[]
+for i in range(1,10):
+    KM = KMeans(n_clusters = i, max_iter = 500)
+    KM.fit(sfrestaurant_grouped_clustering)
+
+    # calculates squared error
+    # for the clustered points
+    cost.append(KM.inertia_)   
+
+# plot the cost against K values
+plt.figure(figsize= (12,8))
+plt.plot(range(1, 10), cost, color ='g', linewidth ='2')
+plt.xlabel("Value of K")
+plt.ylabel("Sqaured Error (Cost)")
+plt.show() # clear the plot
+
+```python
 
 
 
