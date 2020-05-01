@@ -1,9 +1,9 @@
 ---
 title: 'Projects'
 permalink: /projects/
-layout: collection
+layout: posts
 classes: wide
-collection: portfolio
+collection: num_posts
 entries_layout: grid
 
 ---

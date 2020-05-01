@@ -7,7 +7,7 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 author_profile: true
 categories:
-  - Data Science1
+  - Data Science
 tags:
   - Unsupervised Learning
   - FourSquare API
