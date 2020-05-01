@@ -268,6 +268,12 @@ compress_html:
     envs: development
 
 collections:
+  recipes:
+    output: true
+    permalink: /:collection/:path/
+  pets:
+    output: true
+    permalink: /:collection/:path/
   portfolio:
     output: true
     permalink: /:collection/:path/
@@ -295,7 +301,7 @@ defaults:
 
   # _portfolio
   - scope:
-      path: "_posts"
+      path: "_portfolio"
       type: portfolio
     values:
       layout: single
