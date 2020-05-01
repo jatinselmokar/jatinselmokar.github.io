@@ -268,12 +268,6 @@ compress_html:
     envs: development
 
 collections:
-  recipes:
-    output: true
-    permalink: /:collection/:path/
-  pets:
-    output: true
-    permalink: /:collection/:path/
   portfolio:
     output: true
     permalink: /:collection/:path/
@@ -281,16 +275,16 @@ collections:
 # Defaults
 defaults:
   # _posts
-  - scope:
-      path: "_posts"
-      type: posts
-    values:
-      layout: splash
-      author_profile: true
-      read_time: true
-      comments: # true
-      share: true
-      related: true
+  # - scope:
+  #     path: "_posts"
+  #     type: posts
+  #   values:
+  #     layout: splash
+  #     author_profile: true
+  #     read_time: true
+  #     comments: # true
+  #     share: true
+  #     related: true
   # _pages
   - scope:
       path: "_pages"
