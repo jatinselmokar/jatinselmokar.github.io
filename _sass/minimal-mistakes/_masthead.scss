@@ -57,33 +57,7 @@
   display: block;
   font-size: $type-size-8;
   font-weight: 300;
-  animation: pulse 1s;
 
-  @keyframes pulse {
-	0% {
-	color: #051E3E;
-	}
-	10% {
-		color: #051E3E;
-    font-weight: 1000;
-	}
-	30% {
-		color: white;
-	}
-	50% {
-		color: #051E3E;
-    font-weight: 100000;
-	}
-	60% {
-		color: #051E3E;
-	}
-	80% {
-		color: white;
-	}
-	100% {
-
-
-}}
 }
 .masthead__menu {
   float: left;
