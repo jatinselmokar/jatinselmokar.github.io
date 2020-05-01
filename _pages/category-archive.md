@@ -1,21 +1,9 @@
 ---
-title: "Posts by Category"
+title: "Collections by Category"
 layout: categories
 permalink: /categories/
 author_profile: true
 ---
-
-{% for category in site.categories %}
-  <h3>{{ category[0] }}</h3>
-  <ul>
-    {% for post in category[1] %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-{% endfor %}
-
-
-{% capture written_label %}'None'{% endcapture %}
 
 {% for collection in site.collections %}
   {% unless collection.output == false or collection.label == "posts" %}
