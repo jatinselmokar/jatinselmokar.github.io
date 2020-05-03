@@ -75,7 +75,7 @@ Output:
 
 ### Restaurant Venues
 
-FourSquare API is used in retrieval of San Francisco restaurants data and their respective locations. It's free for 950 API and 50 premium calls/per day.
+FourSquare API is used in retrieval of San Francisco restaurant's venue data.
 
 ``` python
 def getNearbyVenues(neighborhood, latitudes, longitudes, radius=radiustoexplore):
@@ -129,8 +129,6 @@ Output:
 
 ## Data Preprocessing & Exploration
 
-Since the restaurant categories column contained categorical data, it is one-hot encoded for the purpose of K-Means algorithm.  
-
 ### Exploring Different Restaurant Categories
 ```python
 # #Explore
@@ -176,7 +174,9 @@ Output:
 <img src="/assets/images/clustering/top5.png" alt="Top 5 Categories" style="height:400px;">
 
 ### One-Hot Encoding Restaurant Categories
-Panda's "get_dummies" method is used to one-hot encode the venue category column.
+
+As the restaurant categories contains categorical data, it is one-hot encoded for the purpose of K-Means algorithm.  
+Panda's "get_dummies" method is used in encoding the venue category column.
 
 ```python
 #Encode VenueCategory column
@@ -190,10 +190,9 @@ Output:
 <img src="/assets/images/clustering/onehot.png" alt="Encoding">
 
 ## K-Means clustering
-
 ### Selection Of "K" Value Using Elbow Method
 
-K-Means algorithm is an unsupervised learning algorithm that segregates data into "k" groups as defined by the user. Since the method of randomly inputting "k" value is naive and doesn't always produce sub-optimal results, we use a metric called "Elbow method" in determining the sub-optimal cluster size for the data.
+K-Means algorithm is an unsupervised learning algorithm that segregates data into "k" groups as defined by the user. Since the method of randomly selecting "k" value is naive and doesn't always produce sub-optimal results, we use a metric called "Elbow method" in determining the sub-optimal cluster size for the data.
 
 The main idea behind it is to run the K-Means algorithm multiple times on different cluster sizes and calculate the inertia at each step i.e., the sum of squared distances of samples to their closest cluster center. The point at which the inertia starts decreasing in a linear fashion is termed as the "Elbow Point" and the associated cluster size is chosen for the algorithm.
 
