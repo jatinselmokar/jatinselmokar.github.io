@@ -1,5 +1,5 @@
 ---
-title: "Unsupervised Learning Approach Towards Neighborhood Segmentation"
+title: "An Unsupervised Learning Approach Towards Neighborhood Segmentation"
 excerpt: "Segmentation of San Francisco neighborhoods using K-Means clustering and FourSquare API"
 header:
   teaser: /assets/images/clustering/SegmentationHeader.jpg
