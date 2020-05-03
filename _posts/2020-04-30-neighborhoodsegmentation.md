@@ -75,7 +75,7 @@ Output:
 
 ### Restaurant Venues
 
-FourSquare API was used in retrieval of San Francisco restaurants data and their respective locations.
+FourSquare API is used in retrieval of San Francisco restaurants data and their respective locations. It's free for 950 API and 50 premium calls/per day.
 
 ``` python
 def getNearbyVenues(neighborhood, latitudes, longitudes, radius=radiustoexplore):
@@ -129,13 +129,15 @@ Output:
 
 ## Data Preprocessing & Exploration
 
+Since the restaurant categories column contained categorical data, it is one-hot encoded for the purpose of K-Means algorithm.  
+
 ### Exploring Different Restaurant Categories
 ```python
 # #Explore
 placetoexplore = 'Restaurant'
 print('There are ',len(sanfran_venues['VenueCategory'].unique()),' venue categories around San Francisco')
 
-#How many restaturant categories
+#How many restaurant categories
 uniquerestaurants = sanfran_venues[sanfran_venues['VenueCategory'].str.contains('{}'.format(placetoexplore))]['VenueCategory'].unique().tolist()
 print('There are', len(uniquerestaurants), ' unique restaurants in SF area')
 
@@ -174,6 +176,7 @@ Output:
 <img src="/assets/images/clustering/top5.png" alt="Top 5 Categories" style="height:400px;">
 
 ### One-Hot Encoding Restaurant Categories
+Panda's "get_dummies" method is used to one-hot encode the venue category column.
 
 ```python
 #Encode VenueCategory column
@@ -188,7 +191,11 @@ Output:
 
 ## K-Means clustering
 
-### Selection Of K Using Elbow Point Method
+### Selection Of "K" Value Using Elbow Method
+
+K-Means algorithm is an unsupervised learning algorithm that segregates data into "k" groups as defined by the user. Since the method of randomly inputting "k" value is naive and doesn't always produce sub-optimal results, we use a metric called "Elbow method" in determining the sub-optimal cluster size for the data.
+
+The main idea behind it is to run the K-Means algorithm multiple times on different cluster sizes and calculate the inertia at each step i.e., the sum of squared distances of samples to their closest cluster center. The point at which the inertia starts decreasing in a linear fashion is termed as the "Elbow Point" and the associated cluster size is chosen for the algorithm.
 
 ```python
 sfrestaurant_grouped_clustering = sfrestaurant_grouped.drop('Neighborhood', 1)
@@ -232,6 +239,10 @@ Output:
 
 ### Visualizing Clusters
 
+The clustering algorithm forms 5 clusters which can be further used to
+understand the restaurant outlook in San Francisco. They also give
+information on the popular restaurants in each of the neighborhood areas.
+
 ```python
 # create map
 map_clusters = folium.Map(location=[latitude, longitude], zoom_start=12)
@@ -257,6 +268,28 @@ for lat, lon, poi, cluster in zip(sanfran_merged['NeighborhoodLatitude'], sanfra
 
 map_clusters
 ```
+
+Output:
+
+<img src="/assets/images/clustering/clusters.png" alt="Clusters" >
+
+### Restaurant Categories In Each Cluster
+
+* Cluster 1 (Red) – Japanese, Sushi, and Chinese restaurants
+* Cluster 2 (Purple) – Mexican & Southern/Soul restaurants
+* Cluster 3 (Blue) – Asian restaurants
+* Cluster 4 (Green) – American restaurants
+* Cluster 5 (Orange) – Vietnamese, Italian, and New American restaurants
+
+## Few Insights On SF Restaurant Businesses
+* Majority of the neighborhoods fall in the Orange cluster where Vietnamese, Italian, and New American are the
+popular cuisines
+* Wide variety of cuisines available throughout San Francisco
+* Asian food is popular in cluster 3 (Sunnyvale area)
+
+Based on one's choice of cuisine, clusters can be further studied to decide the opening location of restaurant. For instance, if the business owner had to open an Indian restaurant, neighborhoods in clusters 2,3, and 4 would be the ideal locations.
+
+Although only venue data is used in analyzing the restaurant outlook, the scope of analysis can be extended to include data like population and average income per household to further bolster the findings.
 
 
 For the entire code and detailed report, please visit [Github]() link.
