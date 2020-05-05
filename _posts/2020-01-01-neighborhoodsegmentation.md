@@ -291,4 +291,4 @@ Based on one's choice of cuisine, clusters can be further studied to decide the 
 Although only venue data is used in analyzing the restaurant outlook, the scope of analysis can be extended to include data like population and average income per household to further bolster the findings.
 
 
-For the entire code and detailed report, please visit [Github]() link.
+For the entire code and detailed report, please visit  *[Github](https://github.com/jatinselmokar/Neighborhood-Segmentation-Using-Unsupervised-Learning-and-FourSquare-API)* link.
