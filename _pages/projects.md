@@ -8,7 +8,9 @@ entries_layout: grid
 
 ---
 
-More projects to be added soon...
+Upcoming Projects -
+* Image Classification on TPUs
+* Apache Spark Basics
 
 
 
