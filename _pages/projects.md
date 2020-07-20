@@ -9,7 +9,7 @@ entries_layout: grid
 ---
 
 Upcoming Projects -
-* Image Classification on TPUs
+* Deep Learning on Tensor Processing Units (TPU)
 * Machine Learning In Apache Spark
 
 
