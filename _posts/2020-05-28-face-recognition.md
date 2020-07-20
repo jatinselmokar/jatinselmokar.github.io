@@ -16,22 +16,24 @@ classes: wide
 ---
 ## Introduction
 
-The project aims to build a facial recognition application using pre-trained DNN models and Python's OpenCV library. To recognize faces, the project uses a special kind of neural architecture called "Siamese Network" in which the output vectors (embeddings) of input images are compared against each other to measure the similarity between the two.
+This project is focused on building a webcam integrated facial recognition application using pre-trained DNN models and Python's OpenCV library. To recognize faces, the project uses a special kind of neural architecture called "Siamese Network" in which the output vectors (embeddings) of input images are compared against each other to measure the similarity between the two.
 
 
-The project is divided into 3 major steps as mentioned below to accomplish the facial recognition task.
+The entire pipeline of the project is divided into 4 major parts as mentioned below. The scripts associated with each stage are run in sequence using command prompt to run the facial recognition application.
 
-* Image Data Generation
+* Image data generation (imagecapture.py)
 * Face detection
-* Extraction of image embeddings
-* Determining similarity
+* Extraction of image embeddings (extract_embeddings.py)
+* Face recognition (recognize_video.py)
 
 
-### Image Data Generation
+## Image Data Generation
 
-For any facial recognition pipeline, the very step is to build user image data so that it can be compared to live facial data in the future for recognition. The pyhton script "imagecapture.py" is used to capture user images which are then stored in local computer for further processing.
+For any facial recognition task, the very step is to build user image data so that it can be compared to live facial data in the future for recognition. The python script "imagecapture.py" is used here to capture user images which are then stored on scratch disk for further processing.
 
 Frames from the webcam video are captured and stored on local drive using OpenCV's VideoCapture method as shown in the code below.
+
+##### Sample Code (Refer to "imagecapture.py" script for the entire code)
 
 ``` python
 #Capture Images
@@ -60,11 +62,11 @@ capture.release()
 cv2.destroyAllWindows()
 ```
 
-### Face Detection
+## Face Detection
 
-Since an image can have multiple objects besides face, it is important for us to crop out just the face part before sending it to the model to extract embeddings. To accomplish this, OpenCV's pre-trained Caffe deep learning model is used. The pre-trained model outputs face detections and the along with the coordinates of the detection. The model also outputs the probability of the detection.
+Since an image can have multiple objects besides face, it is important for us to crop out just the face part before sending it to the model to extract embeddings. To accomplish this, OpenCV's pre-trained Caffe deep learning model is used. The pre-trained model outputs face detections and associated probabilities along with the coordinates of the detection.
 
-To reduce noise in the detections, a confidence limit is used  to filter out weak face detections.
+To reduce noise in the detections, a confidence limit is used to filter out weak face detections.
 
 ``` python
 detector = cv2.dnn.readNetFromCaffe(protoPath, modelPath)
@@ -92,7 +94,7 @@ if len(detections) > 0:
 				continue
 ```
 
-### Extraction of image embeddings
+## Extraction of Image Embeddings
 The pre-processed image is then inputted to a commonly used pre-trained embedding model called OpenFace - a python and torch implementation of face recognition that is based on the paper "FaceNet: A Unified Embedding for Face Recognition and Clustering".  
 
 The model outputs a 128-D facial embedding vector for every user image in the dataset which is then stored in a pickle dump.
@@ -120,11 +122,11 @@ f.close()
 ```
 
 
-### Determining similarity
+## Face Recognition
 
-This is where the face recognition happens. The image frames from the live video feed are passed through the encoder to get the 128-D embedding vectors. These are then compared to every user embedding stored in the database using the L2 norm distance. L2 norm distances are calculated for every combination and the user name with the minimum L2 norm distance is chosen and is displayed on the screen.
+This is the section where the face recognition happens. The image frames from the live video feed are passed through the encoder to get the 128-D embedding vectors. These are then compared to each user embedding stored in the database using the L2 norm distance method. L2 norm distances are calculated for every combination and the user with the minimum L2 norm distance is chosen as the recognized individual.
 
-#### Sample Code (entire Code can be found in "recognize_video.py" script)
+##### Sample Code (Refer to "recognize_video.py" script for the entire code)
 ``` python
 def who_is_it(vector,database_encode):
 	encoding = vector
@@ -164,3 +166,5 @@ faceBlob = cv2.dnn.blobFromImage(face, 1.0 / 255,
 			cv2.putText(frame, text, (startX, y),
 				cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 255), 2)
 ```
+
+For the entire python notebook, please visit *[GitHub](https://github.com/jatinselmokar/opencv-face-recognition-using-facenet-dnn)* link.
