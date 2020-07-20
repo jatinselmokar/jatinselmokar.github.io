@@ -10,7 +10,7 @@ entries_layout: grid
 
 Upcoming Projects -
 * Image Classification on TPUs
-* Apache Spark Basics
+* Machine Learning In Apache Spark
 
 
 
