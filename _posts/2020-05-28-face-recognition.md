@@ -167,7 +167,10 @@ faceBlob = cv2.dnn.blobFromImage(face, 1.0 / 255,
 				cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 255), 2)
 ```
 ## Result
-<img src="/assets/images/face_recognition/camera.jpg" alt="face recognition" style="width:300px;height:300px;">
+
+<img src="/assets/images/clustering/venues.png" alt="HTMLPIC">
+
+<img src="/assets/images/face_recognition/result.jpg" alt="face Recognition" style="width:300px;height:300px;">
 
 
 For the entire python notebook, please visit *[GitHub](https://github.com/jatinselmokar/opencv-face-recognition-using-facenet-dnn)* link.
