@@ -33,7 +33,7 @@ For any facial recognition task, the very step is to build user image data so th
 
 Frames from the webcam video are captured and stored on local drive using OpenCV's VideoCapture method as shown in the code below.
 
-##### Sample Code (Refer to "imagecapture.py" script for the entire code)
+*Sample Code (Refer to "imagecapture.py" script for the entire code)*
 
 ``` python
 #Capture Images
@@ -126,7 +126,7 @@ f.close()
 
 This is the section where the face recognition happens. The image frames from the live video feed are passed through the encoder to get the 128-D embedding vectors. These are then compared to each user embedding stored in the database using the L2 norm distance method. L2 norm distances are calculated for every combination and the user with the minimum L2 norm distance is chosen as the recognized individual.
 
-##### Sample Code (Refer to "recognize_video.py" script for the entire code)
+*Sample Code (Refer to "recognize_video.py" script for the entire code)*
 ``` python
 def who_is_it(vector,database_encode):
 	encoding = vector
