@@ -168,8 +168,6 @@ faceBlob = cv2.dnn.blobFromImage(face, 1.0 / 255,
 ```
 ## Result
 
-<img src="/assets/images/clustering/venues.png" alt="HTMLPIC">
-
 <img src="/assets/images/face_recognition/result.jpg" alt="face Recognition" style="width:300px;height:300px;">
 
 
